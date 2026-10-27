@@ -277,6 +277,21 @@
     "projects/financial-os/SPEC.md"
   ],
   "claude_code_setup": "claude-code/SETUP.md",
+  "better_than_grokbot": {
+    "install": "INSTALL.md",
+    "team_file": "team.json",
+    "app_repo": "https://github.com/jbellsolutions/better-than-grokbot",
+    "app_api": "http://127.0.0.1:3210",
+    "tested_against": "better-than-grokbot main @ 5d221c7 (2026-10-18)",
+    "owner": {
+      "name": "Dan Lizarazo",
+      "about": "Dan Lizarazo runs sales for several offers and is paid a share of the cash collected on each. He is launching a separate funding and credit-repair business on GoHighLevel. His order: the funding launch, then one front door (morning brief, who pinged him, meetings, reminders). EOD and income work is paused until he restarts it. He reads on his phone: answer first, short, numbered, numbers before words. Nothing goes to his team, clients or leads without his yes. Times are Eastern. His Hermes assistant keeps running alongside."
+    },
+    "workspaces": {
+      "business": "Spike Team",
+      "personal": "Personal"
+    }
+  },
   "permanently_denied_actions": [
     "move money, pay anyone, or change billing, payroll, bank, phone-number or A2P settings",
     "ask for or store Social Security numbers, bank details, credit reports, passwords or ID numbers",

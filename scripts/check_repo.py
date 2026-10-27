@@ -69,14 +69,15 @@ blocked = [t.strip() for t in extra.read_text().splitlines() if t.strip()] if ex
 for path in sorted(ROOT.rglob("*")):
     if not path.is_file() or ".git" in path.parts or "private" in path.parts:
         continue
-    if path.name == "CLIENT-CONTEXT.md" or path.suffix not in {".md", ".prompt", ".json", ".py", ".txt"}:
+    if path.name == "CLIENT-CONTEXT.md" or path.suffix not in {".md", ".prompt", ".json", ".py", ".txt", ".mjs"}:
         continue
     text = path.read_text(errors="ignore")
     rel = path.relative_to(ROOT)
     for label, pattern in patterns.items():
         for match in re.findall(pattern, text):
             hit = match if isinstance(match, str) else match[0]
-            if label == "email address" and hit.endswith(("@example.com", "@anthropic.com")):
+            # git@github.com is GitHub's SSH login (a deploy-key clone URL), not someone's address.
+            if label == "email address" and (hit.endswith(("@example.com", "@anthropic.com")) or hit == "git@github.com"):
                 continue
             problems.append(f"{rel}: possible {label}: {hit[:24]}")
     for term in blocked:

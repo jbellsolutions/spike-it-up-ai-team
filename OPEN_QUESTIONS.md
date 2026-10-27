@@ -4,7 +4,7 @@ The bots ask Dan the setup questions themselves (`skills/getting-started`). Thes
 
 ## Before setup
 
-1. **GrokBot, Hermes, or both?** On the Oct 21 call Dan chose to stay on Hermes. On Oct 24 he built more on it: his assistant, its GHL tools, the Slack move. This repo builds a GrokBot team that runs **next to** Hermes and replaces nothing until it's proven. If Dan stays on Hermes, `docs/ON-HERMES.md` sets up the same agents as Hermes profiles.
+1. **GrokBot, Better than GrokBot, Hermes, or a mix?** On the Oct 21 call Dan chose to stay on Hermes. On Oct 24 he built more on it: his assistant, its GHL tools, the Slack move. This repo builds a GrokBot team that runs **next to** Hermes and replaces nothing until it's proven. Better than GrokBot (`INSTALL.md`) runs the same team from Dan's Mac, on Orgo computers like his Hermes. If Dan stays on Hermes, `docs/ON-HERMES.md` sets up the same agents as Hermes profiles.
 2. **One account or two?** Business-only is enough to start. The personal account (Personal Assistant, Money Manager) can come later, or never. Meetings and reminders already work from the business account.
 3. **Plan size.** Grok Bot needs Premium or higher. Milestone 1 runs about eight routines a day and fits Premium. Milestone 2 adds about ten more; Super or Ultra fits both.
 4. **Rotate pasted secrets.** A Slack bot token and a GHL key were pasted into chats. Make new ones before setup.
