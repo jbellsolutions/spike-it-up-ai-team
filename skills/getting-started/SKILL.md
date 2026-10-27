@@ -40,7 +40,7 @@ Don't ask for passwords, keys, revenue history or bank details. The agents never
 ## Where the answers go
 
 - Business 1: `context/funding-launch.md` (built by the Funding Launch bot), files in `context/funding-project/`.
-- Business 2–4, 6, 7, 8, 13: `context/owner.md`; priority people also in `context/priority-people.md`; channels to skip in `context/scan-mute.md`; roster notes in `context/eod-roster.md`.
+- Business 2–4, 6, 7, 8, 13: `context/owner.md`; priority people also in `context/priority-people.md`; channels to skip in `context/ping-mutes.md`; roster notes in `context/eod-roster.md`.
 - Business 5: `context/owner.md` and `context/digest-channels.md`.
 - Business 9–10: proposed entries in `context/offers.md`. Read them back and write them only after Dan's yes (Ask first rule).
 - Business 11: `context/eod-format.md`. Business 12: `context/kpi-targets.md`.

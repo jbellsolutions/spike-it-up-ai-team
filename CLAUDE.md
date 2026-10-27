@@ -11,7 +11,7 @@ If Dan pasted the repo link and asked you to install Better than GrokBot or load
 3. **Plain language.** Short sentences. Dan reads on his phone.
 4. **The payout math in `skills/offer-payout-math` and the parsing rules in `skills/eod-parsing` are fixed.** Change them only when Dan asks, and say what output changes.
 5. **Keep the pieces in sync.** A new or changed agent touches its charter, `manifest.json`, `PROJECT_CHARTER.md` (team table and daily rhythm), its skills and its routines. A changed Profile also changes the charter's `<!-- btg-role -->` block (500 characters at most). After any change to the manifest, a charter or a routine, run `node scripts/build-team.mjs` to rebuild `team.json`. Never edit `team.json` by hand.
-6. **Routine files** keep the exact header (NAME, OWNER, ACCOUNT, WHEN, MILESTONE, STATUS, `---`) and the switch check, test mode, isolation guard and lean-run lines.
+6. **Routine files** keep the exact header (NAME, OWNER, ACCOUNT, WHEN, MILESTONE, STATUS, `---`) and the switch check, test mode, isolation guard, lean-run and run-record lines. A routine that reads a source says what to do when it can't: "unknown" with the reason, and nothing sent to the team.
 7. **Anything team-facing** needs a standing approval in `policies/APPROVALS.md`.
 8. Run `python3 scripts/check_repo.py` and `node scripts/verify.mjs` before committing. The first checks the manifest, the routine headers, the Profile blocks and looks for things that shouldn't be public. The second checks `team.json` and the Better than GrokBot limits.
 
@@ -27,7 +27,7 @@ agents/                one charter per bot (Profile block = the bot's standing r
 skills/                GrokBot private skills (SKILL.md each)
 routines/              scheduled jobs, created paused
 policies/              approvals and data rules
-docs/                  Hermes → GrokBot, Slack setup + manifest, Obsidian vault
+docs/                  build record, decision ledger, Hermes → GrokBot, Slack setup + manifest, Obsidian vault
 projects/              SPEC.md per project for Claude Code
 claude-code/           Dan's Claude Code setup: SETUP.md, CLAUDE.md, settings.json, skills
 .claude/commands/      /new-project, /build, /add-agent, /status

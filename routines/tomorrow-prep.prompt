@@ -9,5 +9,6 @@ Switch check: read /workspace/dan-personal/context/routines-on.md. If "Tomorrow 
 Test mode: if it's listed as "test", send every message to Dan only, never to a channel or anyone else, and start each message with "TEST".
 Isolation guard: work only in /workspace/dan-personal/ and this account's connected apps. If /workspace/dan-personal/context/owner.md is missing, write NO_CLIENT_SOURCE to the log and stop. Never use another bot's files, logins or memory.
 Lean run: read only what this job needs. If nothing changed, write "no change" and stop.
+Run record: end every run with one line in this month's file in /workspace/dan-personal/log/: the time, "Tomorrow prep", and done, no change, not switched on, blocked (why) or failed (why), with counts. If you stopped at the switch check or the isolation guard, the line you wrote there is this run's record; don't add a second.
 
-Use the personal-scheduling skill. Read tomorrow's calendar. If there is a meeting before 10 AM, something to prepare, or a conflict, send Dan one short message about it. Otherwise send nothing.
+Use the personal-scheduling skill. Read tomorrow's calendar. If a calendar can't be read, tell Dan in one line which one. If there is a meeting before 10 AM, something to prepare, or a conflict, send Dan one short message about it. Otherwise send nothing.

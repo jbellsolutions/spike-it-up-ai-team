@@ -46,6 +46,31 @@ All calls: `-H "Authorization: Bearer $SLACK_BOT_TOKEN"`, base `https://slack.co
 
 Mentions in posts: `<@U…>`. Use the user ID, never a typed name.
 
+## Sent check (before every team post)
+
+A post can go out while its reply gets lost: a timeout, a crash. Posting again "to be safe" double-posts to the whole team. So every team-facing post has its own key, and `<workspace>/log/sent.md` has one line per key:
+
+```
+<report date>|<channel>|<template>|<version>|<target> · SENT · ts=<Slack ts>
+```
+
+The report date is the day the EODs cover. The target makes each post's key unique:
+
+| Post | Target |
+|---|---|
+| A reminder tag | The rep's Slack user ID (two missing reps in one channel are two keys) |
+| The VA message | `va` |
+| The EOD summary | `summary` |
+| A corrected summary in the thread | The late check's run time, `1503` or `2003` |
+
+1. **Before posting**, look the key up in `log/sent.md`.
+   - `SENT`: it's out. Don't post it again.
+   - `UNKNOWN`: read the channel back (`conversations.history` for that day, from the bot's user). If the post is there, write its `ts` and mark it `SENT`. If it isn't, post once.
+2. **Check the approval** in `context/standing-approvals.md` for this exact template and version, now, not at the start of the run. Revoked or a different version: don't post. Write `BLOCKED (why)` and tell Dan in the run's note.
+3. **Post**, then write the line: `SENT` with the `ts`, `FAILED` with the error, or `UNKNOWN` if you can't tell.
+
+In test or preview mode nothing goes to the team, so there's no key to write.
+
 ## Errors
 
 | Error | Meaning | Do |

@@ -9,6 +9,7 @@ Switch check: read /workspace/spike-team/context/routines-on.md. If "GHL health 
 Test mode: if it's listed as "test", send every message to Dan only, never to a channel or anyone else, and start each message with "TEST".
 Isolation guard: work only in /workspace/spike-team/ and this account's connected apps. If /workspace/spike-team/context/owner.md is missing, write NO_CLIENT_SOURCE to the log and stop. Never use another bot's files, logins or memory.
 Lean run: read only what this job needs. If nothing changed, write "no change" and stop.
+Run record: end every run with one line in this month's file in /workspace/spike-team/log/: the time, "GHL health check", and done, no change, not switched on, blocked (why) or failed (why), with counts. If you stopped at the switch check or the isolation guard, the line you wrote there is this run's record; don't add a second.
 
-GHL hub: run it as /workspace/spike-team/ghl-super-hub/ghl. If it won't start, run "bash install.sh" in that folder once, then go on.
+GHL hub: run it as /workspace/spike-team/ghl-super-hub/ghl. If it won't start, run "bash install.sh" in that folder once, then go on. If it still can't connect, write "GHL: unknown, can't connect (<reason>)" under "GHL", never "no issues", and stop.
 Read only. For each location in /workspace/spike-team/context/ghl-locations.md: workflow errors since yesterday, contacts stuck in a workflow, form submissions that landed in no pipeline, new applicants without a first touch, contacts missing the source tag, and any workflow that fired twice for one deal. Write findings to /workspace/spike-team/daily/<today>/funding.md under "GHL". Change nothing.

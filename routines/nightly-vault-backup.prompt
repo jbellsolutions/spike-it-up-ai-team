@@ -9,5 +9,6 @@ Switch check: read /workspace/spike-team/context/routines-on.md. If "Nightly vau
 Test mode: if it's listed as "test", send every message to Dan only, never to a channel or anyone else, and start each message with "TEST".
 Isolation guard: work only in /workspace/spike-team/ and this account's connected apps. If /workspace/spike-team/context/owner.md is missing, write NO_CLIENT_SOURCE to the log and stop. Never use another bot's files, logins or memory.
 Lean run: read only what this job needs. If nothing changed, write "no change" and stop.
+Run record: end every run with one line in this month's file in /workspace/spike-team/log/: the time, "Nightly vault backup", and done, no change, not switched on, blocked (why) or failed (why), with counts. If you stopped at the switch check or the isolation guard, the line you wrote there is this run's record; don't add a second.
 
 Use the vault-notes skill, section "Backup". Copy every note in /workspace/spike-team/vault/ that changed since the last backup to the Google Drive folder "Spike AI Vault", keeping the same folder paths, and write the list to the log. Never delete anything in Drive. Send nothing to Dan unless the backup failed twice in a row.

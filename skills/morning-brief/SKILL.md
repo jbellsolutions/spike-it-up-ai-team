@@ -24,11 +24,22 @@ Team: $C cash · 4 closes · show 55% · missing: Jordan
 Pings: Sam waiting on contract numbers
 Launch: 2 forms live · blocked: pricing (you) · next: approve follow-up text
 VA: 3 refunds logged · Jordan out Fri · new rep starts Mon
-Broken: Offer B tracker didn't parse (tab renamed?)
+Broken: Offer B tracker didn't parse (tab renamed?) · GHL health check didn't run 6:07
 Today: 11:00 Sam call: bring Q4 numbers · 3:00 remind: call Jordan
 ```
 
 Drop any section that's empty. Before milestone 2 there's no Team line, and the Money line appears only if the trackers or the Income Hub are readable. Numbers before words. No greetings, no sign-off.
+
+## Missed runs
+
+Every routine ends with one run-record line in this month's file in `log/`. A routine that should have run and left no line didn't run, and Dan hears it here, because a silent failure looks exactly like a quiet day.
+
+1. Take the routines listed as `on` or `test` in `context/routines-on.md`.
+2. For each, read its WHEN line in `repo/routines/` and work out every time it should have run **since the last brief**, not since midnight: the 6:07, 6:41 and 7:30 runs land just before this one. Count weekdays only, weekly days, the monthly day, every time of a routine that runs several times a day, and skip a routine that has marked its job done (the launch check after "launched").
+3. An expected run with no line: "<NAME> didn't run at <time>". A line that says blocked or failed: "<NAME> blocked: <reason>" or "<NAME> failed: <reason>".
+4. Put each under **Broken**, one line each. If two or more runs in a row are missing, add "check Weekly usage": the weekly meter or billing may have run out.
+
+A missing daily note is also broken, not "no change": "No note from Funding Launch."
 
 ## Approvals
 

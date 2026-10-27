@@ -39,14 +39,24 @@ for path in sorted((ROOT / "routines").glob("*.prompt")):
     for key in ("NAME:", "OWNER:", "ACCOUNT:", "WHEN:", "MILESTONE:", "STATUS:"):
         if key not in head:
             problems.append(f"{rel}: header missing {key}")
-    for line in ("Switch check:", "Test mode:", "Isolation guard:", "Lean run:"):
+    for line in ("Switch check:", "Test mode:", "Isolation guard:", "Lean run:", "Run record:"):
         if line not in body:
             problems.append(f"{rel}: missing '{line}'")
 
 # Every charter has a Profile block; every skill has frontmatter.
+CONTRACT_ROWS = ("Owner", "Reads", "Only writer of", "Produces", "Tools and scopes", "Never", "Hands off to",
+                 "Limits per run", "Wakes on", "If a run fails", "Stops and tells Dan when", "Done means")
 for path in sorted((ROOT / "agents").glob("*.md")):
-    if "## Profile" not in path.read_text():
+    text = path.read_text()
+    if "## Profile" not in text:
         problems.append(f"{path.relative_to(ROOT)}: no Profile block")
+    # Active roles (01-89) carry an Operating contract; reserved ones (90+) don't yet.
+    if path.name[:2].isdigit() and int(path.name[:2]) < 90:
+        if "## Operating contract" not in text:
+            problems.append(f"{path.relative_to(ROOT)}: no Operating contract")
+        for row in CONTRACT_ROWS:
+            if f"| **{row}** |" not in text:
+                problems.append(f"{path.relative_to(ROOT)}: Operating contract missing '{row}'")
 for path in sorted(ROOT.glob("**/SKILL.md")):
     text = path.read_text()
     if not (text.startswith("---\n") and "\nname:" in text and "\ndescription:" in text):

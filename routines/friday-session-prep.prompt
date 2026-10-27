@@ -9,5 +9,6 @@ Switch check: read /workspace/spike-team/context/routines-on.md. If "Friday sess
 Test mode: if it's listed as "test", send every message to Dan only, never to a channel or anyone else, and start each message with "TEST".
 Isolation guard: work only in /workspace/spike-team/ and this account's connected apps. If /workspace/spike-team/context/owner.md is missing, write NO_CLIENT_SOURCE to the log and stop. Never use another bot's files, logins or memory.
 Lean run: read only what this job needs. If nothing changed, write "no change" and stop.
+Run record: end every run with one line in this month's file in /workspace/spike-team/log/: the time, "Friday session prep", and done, no change, not switched on, blocked (why) or failed (why), with counts. If you stopped at the switch check or the isolation guard, the line you wrote there is this run's record; don't add a second.
 
 Read this week's notes in /workspace/spike-team/daily/, the approvals, the log and /workspace/spike-team/context/routines-on.md. Write one screen for Dan's 4 PM session with Justin: what shipped this week, what's blocked and on whom, the numbers that moved most, this week's Grok Bot usage if you can see it, and the three questions to bring. Save it to /workspace/spike-team/vault/Sessions/<date> Friday prep.md and send Dan the link plus the three questions.

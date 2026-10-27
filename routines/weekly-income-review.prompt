@@ -9,5 +9,6 @@ Switch check: read /workspace/spike-team/context/routines-on.md. If "Weekly inco
 Test mode: if it's listed as "test", send every message to Dan only, never to a channel or anyone else, and start each message with "TEST".
 Isolation guard: work only in /workspace/spike-team/ and this account's connected apps. If /workspace/spike-team/context/owner.md is missing, write NO_CLIENT_SOURCE to the log and stop. Never use another bot's files, logins or memory.
 Lean run: read only what this job needs. If nothing changed, write "no change" and stop.
+Run record: end every run with one line in this month's file in /workspace/spike-team/log/: the time, "Weekly income review", and done, no change, not switched on, blocked (why) or failed (why), with counts. If you stopped at the switch check or the isolation guard, the line you wrote there is this run's record; don't add a second.
 
 From /workspace/spike-team/data/income/, write last week by offer (cash, what Dan made, ad spend share where netOfAds), the month so far against target, the projection, and any offer whose trend changed. If a billing source is connected, include the payment check for the week. Send it to Dan only and save it to /workspace/spike-team/vault/Money/Income/Weekly/<monday>.md.

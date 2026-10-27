@@ -9,5 +9,7 @@ Switch check: read /workspace/spike-team/context/routines-on.md. If "EOD reminde
 Test mode: if it's listed as "test", send every message to Dan only, never to a channel or anyone else, and start each message with "TEST".
 Isolation guard: work only in /workspace/spike-team/ and this account's connected apps. If /workspace/spike-team/context/owner.md is missing, write NO_CLIENT_SOURCE to the log and stop. Never use another bot's files, logins or memory.
 Lean run: read only what this job needs. If nothing changed, write "no change" and stop.
+Run record: end every run with one line in this month's file in /workspace/spike-team/log/: the time, "EOD reminder 2", and done, no change, not switched on, blocked (why) or failed (why), with counts. If you stopped at the switch check or the isolation guard, the line you wrote there is this run's record; don't add a second.
 
-Same as EOD reminder 1, with standing approval 3's exact text ("second reminder"). Tag only reps still missing now. In preview, write "would have tagged: <names>" to today's sales.md instead.
+Same as EOD reminder 1, with standing approval 3's exact text ("second reminder"). Tag only reps still missing now. If the EOD channels or the roster can't be read, tag nobody, as in EOD reminder 1. In preview, write "would have tagged: <names>" to today's sales.md instead.
+Before each team post, run the slack-api skill's sent check, so nothing is posted twice.

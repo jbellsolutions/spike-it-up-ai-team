@@ -6,7 +6,7 @@ Everything Dan needs to run his sales business with AI agents, in one link:
   1. your funding launch and one front door (morning brief, who pinged you, meetings, reminders);
   2. EOD reports and income by offer, when you restart that work;
   3. every sales call filed and searchable.
-- **Or the same team on Better than GrokBot**, on your own Mac (see below).
+- **Or the same team on Better than GrokBot**, on your own Mac (near the end).
 - **Specs for every project** Dan wants built, written so Claude Code can build each one.
 - **A Claude Code setup** that turns any new idea into a spec, a charter and a build.
 
@@ -40,29 +40,6 @@ You need a Grok plan that includes Grok Bot (Premium or higher) and the Grok Bot
 | **B. Personal** (later, optional) | Personal Assistant, Money Manager | Your calendar, notes and personal money never share a computer with business bots |
 
 For account B, do the same three steps and say **"This is my personal account."** instead.
-
-## Better Than GrokBot (on your Mac)
-
-The same team can run on **Better than GrokBot**, Justin's app, instead of Grok. The app runs on your Mac. Your bots work on Orgo cloud computers, like your Hermes assistant does now. Same charters, same skills, same routines, and the same rule: nothing goes live until you say yes.
-
-Open Claude Code (or Codex) on your Mac and paste:
-
-```
-Install Better than GrokBot and load my team from https://github.com/jbellsolutions/spike-it-up-ai-team
-Follow INSTALL.md step by step. Ask me before anything goes live.
-```
-
-It installs the app and asks for your keys one at a time. It loads the AI Co-Founder and Funding Launch with every routine switched off. Then the AI Co-Founder sets up its computer and asks you the setup questions. EOD, income and calls come later, when you ask.
-
-| | GrokBot | Better than GrokBot |
-|---|---|---|
-| Runs on | Grok's computer | Your Mac, plus Orgo cloud computers |
-| You pay for | A Grok plan (Premium or higher) | The app is free. The AI model (OpenRouter or OpenAI), Orgo and Composio each bill you directly |
-| Business and personal | Two Grok accounts | Two workspaces in one app: Spike Team and Personal |
-| Both Slack workspaces, every calendar | Depends on Grok's connectors | Yes: several accounts per app |
-| Setup | Paste the link into a new Grok Bot | Paste the link into Claude Code or Codex |
-
-Your Hermes assistant keeps running. Better than GrokBot makes its own computers and never touches the Hermes one.
 
 ## 2. Set up Claude Code (one paste)
 
@@ -119,10 +96,33 @@ Read SPEC.md first. Ask me for anything marked INPUT NEEDED before you start.
 | [policies/](policies/) | What needs your yes, and how team and money data is handled |
 | [projects/](projects/) | A spec per project, for Claude Code |
 | [claude-code/](claude-code/) | Your Claude Code setup: instructions, skills, commands |
-| [docs/](docs/) | Moving from Hermes, running these agents on Hermes instead, Slack setup, the memory vault |
+| [docs/](docs/) | What's built vs running (`BUILD-RECORD.md`), the decisions it rests on (`DECISIONS.md`), moving from Hermes, running on Hermes instead, Slack setup, the memory vault |
 | [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) | Decisions still to make |
 | [manifest.json](manifest.json) | Machine-readable list of all of the above |
 | [scripts/](scripts/) | Repo checks, and the Better than GrokBot installer |
+
+## Prefer Better than GrokBot on your Mac?
+
+The same team can run on **Better than GrokBot**, Justin's app, instead of Grok. The app runs on your Mac. Your bots work on Orgo cloud computers, like your Hermes assistant does now. Same charters, same skills, same routines, and the same rule: nothing goes live until you say yes.
+
+Open Claude Code (or Codex) on your Mac and paste:
+
+```
+Install Better than GrokBot and load my team from https://github.com/jbellsolutions/spike-it-up-ai-team
+Follow INSTALL.md step by step. Ask me before anything goes live.
+```
+
+It installs the app and asks for your keys one at a time. It loads the AI Co-Founder and Funding Launch with every routine switched off. Then the AI Co-Founder sets up its computer and asks you the setup questions. EOD, income and calls come later, when you ask.
+
+| | GrokBot | Better than GrokBot |
+|---|---|---|
+| Runs on | Grok's computer | Your Mac, plus Orgo cloud computers |
+| You pay for | A Grok plan (Premium or higher) | The app is free. The AI model (OpenRouter or OpenAI), Orgo and Composio each bill you directly |
+| Business and personal | Two Grok accounts | Two workspaces in one app: Spike Team and Personal |
+| Both Slack workspaces, every calendar | Depends on Grok's connectors | Yes: several accounts per app |
+| Setup | Paste the link into a new Grok Bot | Paste the link into Claude Code or Codex |
+
+Your Hermes assistant keeps running. Better than GrokBot makes its own computers and never touches the Hermes one.
 
 ## Staying on Hermes instead?
 
@@ -130,6 +130,6 @@ Everything here is plain markdown, so the same charters, skills and routines wor
 
 ## What this repo never holds
 
-Passwords, API keys, tokens, revenue figures, team names, Slack IDs, client names, sheet links or call transcripts. Those go in your own GrokBot (a secure secret card, **Settings → Vault** or **Take over**) or in your private `CLIENT-CONTEXT.md`. See [client-context/README.md](client-context/README.md).
+Passwords, API keys, tokens, revenue figures, team names, Slack IDs, client names, sheet links or call transcripts. Those go in your own GrokBot (a secure secret card or **Take over**) or in your private `CLIENT-CONTEXT.md`. See [client-context/README.md](client-context/README.md).
 
 Built for Dan Lizarazo by Justin Bellware ([Your AI Guy](https://www.skool.com/your-ai-guy/)).
