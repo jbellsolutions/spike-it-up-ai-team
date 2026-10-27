@@ -1,0 +1,13 @@
+NAME: Weekly income review
+OWNER: Revenue Analyst
+ACCOUNT: business
+WHEN: Every Monday at 8:21 AM
+MILESTONE: 2
+STATUS: Created paused. Turned on only after Dan says yes.
+---
+Switch check: read /workspace/spike-team/context/routines-on.md. If "Weekly income review" isn't listed there as "on" or "test", write "Weekly income review: not switched on" to this month's file in /workspace/spike-team/log/ and stop.
+Test mode: if it's listed as "test", send every message to Dan only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/spike-team/ and this account's connected apps. If /workspace/spike-team/context/owner.md is missing, write NO_CLIENT_SOURCE to the log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, write "no change" and stop.
+
+From /workspace/spike-team/data/income/, write last week by offer (cash, what Dan made, ad spend share where netOfAds), the month so far against target, the projection, and any offer whose trend changed. If a billing source is connected, include the payment check for the week. Send it to Dan only and save it to /workspace/spike-team/vault/Money/Income/Weekly/<monday>.md.

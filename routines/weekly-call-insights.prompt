@@ -1,0 +1,13 @@
+NAME: Weekly call insights
+OWNER: Call Bank
+ACCOUNT: business
+WHEN: Every Friday at 11:07 AM
+MILESTONE: 3
+STATUS: Created paused. Turned on only after Dan says yes.
+---
+Switch check: read /workspace/spike-team/context/routines-on.md. If "Weekly call insights" isn't listed there as "on" or "test", write "Weekly call insights: not switched on" to this month's file in /workspace/spike-team/log/ and stop.
+Test mode: if it's listed as "test", send every message to Dan only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/spike-team/ and this account's connected apps. If /workspace/spike-team/context/owner.md is missing, write NO_CLIENT_SOURCE to the log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, write "no change" and stop.
+
+From this week's notes in /workspace/spike-team/vault/Calls/ and vault/Sales/Objections.md: top objections and how often, grade trend per closer, the best call of the week, and calls that seem to be missing a recording (closers with EODs showing live calls but no filed call). Send it to Dan only and save it to /workspace/spike-team/vault/Sales/Call insights/<friday>.md.

@@ -1,0 +1,13 @@
+NAME: Morning agenda
+OWNER: Personal Assistant
+ACCOUNT: personal
+WHEN: Every day at 7:05 AM
+MILESTONE: -
+STATUS: Created paused. Turned on only after Dan says yes.
+---
+Switch check: read /workspace/dan-personal/context/routines-on.md. If "Morning agenda" isn't listed there as "on" or "test", write "Morning agenda: not switched on" to this month's file in /workspace/dan-personal/log/ and stop.
+Test mode: if it's listed as "test", send every message to Dan only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/dan-personal/ and this account's connected apps. If /workspace/dan-personal/context/owner.md is missing, write NO_CLIENT_SOURCE to the log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, write "no change" and stop.
+
+Use the personal-scheduling skill. Read today's calendar and anything Dan committed to in /workspace/dan-personal/vault/. Send Dan today's meetings with one line of prep each, conflicts, and emails that need him (subject and sender only). If the day is empty and nothing needs him, send nothing.

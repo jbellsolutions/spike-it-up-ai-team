@@ -1,0 +1,26 @@
+# Private business details never go in this repo.
+CLIENT-CONTEXT.md
+client-context/*.md
+!client-context/README.md
+!client-context/CLIENT-CONTEXT.template.md
+private/
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*token*
+*secret*
+
+# Call recordings and transcripts
+*.mp4
+*.m4a
+*.mp3
+*.wav
+transcripts/
+
+# OS and editor noise
+.DS_Store
+node_modules/

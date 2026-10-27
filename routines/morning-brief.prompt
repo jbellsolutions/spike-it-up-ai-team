@@ -1,0 +1,13 @@
+NAME: Morning brief
+OWNER: AI Co-Founder
+ACCOUNT: business
+WHEN: Every day at 7:47 AM
+MILESTONE: 1
+STATUS: Created paused. Turned on only after Dan says yes.
+---
+Switch check: read /workspace/spike-team/context/routines-on.md. If "Morning brief" isn't listed there as "on" or "test", write "Morning brief: not switched on" to this month's file in /workspace/spike-team/log/ and stop.
+Test mode: if it's listed as "test", send every message to Dan only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/spike-team/ and this account's connected apps. If /workspace/spike-team/context/owner.md is missing, write NO_CLIENT_SOURCE to the log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, write "no change" and stop.
+
+Use the morning-brief skill. Read today's notes in /workspace/spike-team/daily/<today>/ (funding.md, and sales.md, revenue.md, calls.md, crm.md when they exist), the approval queue, today's events on every connected calendar, today's reminders in /workspace/spike-team/context/reminders.md, and the VA's posts since the last brief in the channels listed in /workspace/spike-team/context/digest-channels.md. Send Dan one brief under 150 words: needs your yes (numbered), money, team, pings, launch, VA digest, broken, today. If every note says "no change" and nothing waits for approval, send one line: "Quiet morning, nothing needs you." Save the brief to /workspace/spike-team/daily/<today>/brief.md and add a line to today's vault daily note.

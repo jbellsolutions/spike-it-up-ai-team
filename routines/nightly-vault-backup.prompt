@@ -1,0 +1,13 @@
+NAME: Nightly vault backup
+OWNER: AI Co-Founder
+ACCOUNT: business
+WHEN: Every day at 11:41 PM
+MILESTONE: 1
+STATUS: Created paused. Turned on only after Dan says yes.
+---
+Switch check: read /workspace/spike-team/context/routines-on.md. If "Nightly vault backup" isn't listed there as "on" or "test", write "Nightly vault backup: not switched on" to this month's file in /workspace/spike-team/log/ and stop.
+Test mode: if it's listed as "test", send every message to Dan only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/spike-team/ and this account's connected apps. If /workspace/spike-team/context/owner.md is missing, write NO_CLIENT_SOURCE to the log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, write "no change" and stop.
+
+Use the vault-notes skill, section "Backup". Copy every note in /workspace/spike-team/vault/ that changed since the last backup to the Google Drive folder "Spike AI Vault", keeping the same folder paths, and write the list to the log. Never delete anything in Drive. Send nothing to Dan unless the backup failed twice in a row.

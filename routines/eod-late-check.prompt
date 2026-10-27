@@ -1,0 +1,13 @@
+NAME: Late EOD check
+OWNER: Sales Manager
+ACCOUNT: business
+WHEN: Every day at 3:03 PM and 8:03 PM
+MILESTONE: 2
+STATUS: Created paused. Turned on only after Dan says yes.
+---
+Switch check: read /workspace/spike-team/context/routines-on.md. If "Late EOD check" isn't listed there as "on" or "test", write "Late EOD check: not switched on" to this month's file in /workspace/spike-team/log/ and stop.
+Test mode: if it's listed as "test", send every message to Dan only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/spike-team/ and this account's connected apps. If /workspace/spike-team/context/owner.md is missing, write NO_CLIENT_SOURCE to the log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, write "no change" and stop.
+
+Use the eod-parsing skill. Re-read yesterday's EOD window including edits and thread replies, and compare it with /workspace/spike-team/data/eod/<yesterday>.json. If nothing changed, write "no change" and stop. If a late or edited EOD changed the totals: update the json, rebuild the summary, and in live mode post the corrected summary as a thread reply under the original (standing approval 5, timestamp in <yesterday>.posted); in preview send it to Dan. Then send Dan one line: "Updated: <rep> posted late, cash +$X." Also check today's window and record early posts so the morning run is faster.

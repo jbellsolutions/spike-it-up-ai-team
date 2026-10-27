@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "name": "Dan's AI Team: Spike It Up Media",
+  "description": "A GrokBot agent team for a sales leader paid on cash collected across several offers: EOD summaries and reminders, per-offer income, call filing and grading, a funding business launch on GoHighLevel, plus a personal assistant and money manager on a separate account. Includes Claude Code project specs and a Claude Code setup.",
+  "entry_point": "START-HERE.md",
+  "repo_url": "https://github.com/jbellsolutions/spike-it-up-ai-team",
+  "timezone": "America/New_York",
+  "accounts": {
+    "business": {
+      "lead_bot": "AI Co-Founder",
+      "workspace": "/workspace/spike-team",
+      "routine_switch_file": "/workspace/spike-team/context/routines-on.md",
+      "eod_mode_file": "/workspace/spike-team/context/eod-mode.md",
+      "ghl_hub_command": "/workspace/spike-team/ghl-super-hub/ghl"
+    },
+    "personal": {
+      "lead_bot": "Personal Assistant",
+      "workspace": "/workspace/dan-personal",
+      "routine_switch_file": "/workspace/dan-personal/context/routines-on.md"
+    }
+  },
+  "skills": [
+    {
+      "name": "getting-started",
+      "path": "skills/getting-started",
+      "accounts": [
+        "business",
+        "personal"
+      ]
+    },
+    {
+      "name": "vault-notes",
+      "path": "skills/vault-notes",
+      "accounts": [
+        "business",
+        "personal"
+      ]
+    },
+    {
+      "name": "morning-brief",
+      "path": "skills/morning-brief",
+      "accounts": [
+        "business"
+      ]
+    },
+    {
+      "name": "slack-priority-scan",
+      "path": "skills/slack-priority-scan",
+      "accounts": [
+        "business"
+      ]
+    },
+    {
+      "name": "slack-api",
+      "path": "skills/slack-api",
+      "accounts": [
+        "business"
+      ]
+    },
+    {
+      "name": "eod-parsing",
+      "path": "skills/eod-parsing",
+      "accounts": [
+        "business"
+      ]
+    },
+    {
+      "name": "offer-payout-math",
+      "path": "skills/offer-payout-math",
+      "accounts": [
+        "business"
+      ]
+    },
+    {
+      "name": "call-review",
+      "path": "skills/call-review",
+      "accounts": [
+        "business"
+      ]
+    },
+    {
+      "name": "funding-launch-checklist",
+      "path": "skills/funding-launch-checklist",
+      "accounts": [
+        "business"
+      ]
+    },
+    {
+      "name": "personal-scheduling",
+      "path": "skills/personal-scheduling",
+      "accounts": [
+        "business",
+        "personal"
+      ]
+    },
+    {
+      "name": "money-check",
+      "path": "skills/money-check",
+      "accounts": [
+        "personal"
+      ]
+    }
+  ],
+  "agents": [
+    {
+      "name": "AI Co-Founder",
+      "charter": "agents/01-ai-cofounder.md",
+      "account": "business",
+      "milestone": 1,
+      "pinned": true,
+      "replaces": [
+        "Hermes AI Co-Founder",
+        "Hermes Dan's Biz Assistant"
+      ],
+      "skills": [
+        "getting-started",
+        "morning-brief",
+        "slack-priority-scan",
+        "eod-parsing",
+        "offer-payout-math",
+        "personal-scheduling",
+        "vault-notes"
+      ],
+      "routines": [
+        "routines/morning-brief.prompt",
+        "routines/priority-ping-scan.prompt",
+        "routines/friday-session-prep.prompt",
+        "routines/nightly-vault-backup.prompt"
+      ]
+    },
+    {
+      "name": "Sales Manager",
+      "charter": "agents/02-sales-manager.md",
+      "account": "business",
+      "milestone": 2,
+      "replaces": [
+        "Hermes EOD tracker crons",
+        "Claude Cowork EOD summary task"
+      ],
+      "skills": [
+        "eod-parsing",
+        "slack-api",
+        "vault-notes"
+      ],
+      "routines": [
+        "routines/eod-summary.prompt",
+        "routines/eod-reminder-1.prompt",
+        "routines/eod-reminder-2.prompt",
+        "routines/eod-va-escalation.prompt",
+        "routines/eod-late-check.prompt",
+        "routines/weekly-leaderboard.prompt"
+      ]
+    },
+    {
+      "name": "Revenue Analyst",
+      "charter": "agents/03-revenue-analyst.md",
+      "account": "business",
+      "milestone": 2,
+      "replaces": [
+        "Income Hub prototype (Claude artifact)"
+      ],
+      "skills": [
+        "offer-payout-math",
+        "vault-notes"
+      ],
+      "routines": [
+        "routines/income-sync.prompt",
+        "routines/weekly-income-review.prompt",
+        "routines/month-close.prompt"
+      ]
+    },
+    {
+      "name": "Call Bank",
+      "charter": "agents/04-call-bank.md",
+      "account": "business",
+      "milestone": 3,
+      "replaces": [
+        "Contractor-hosted call grader"
+      ],
+      "skills": [
+        "call-review",
+        "vault-notes"
+      ],
+      "routines": [
+        "routines/call-intake.prompt",
+        "routines/weekly-call-insights.prompt"
+      ]
+    },
+    {
+      "name": "Funding Launch",
+      "charter": "agents/05-funding-launch.md",
+      "account": "business",
+      "milestone": 1,
+      "skills": [
+        "funding-launch-checklist",
+        "vault-notes",
+        "ghl-super-hub:ghl-operator",
+        "ghl-super-hub:ghl-api",
+        "ghl-super-hub:ghl-browser",
+        "ghl-super-hub:ghl-workflows",
+        "ghl-super-hub:ghl-sites",
+        "ghl-super-hub:ghl-email",
+        "ghl-super-hub:ghl-affiliates",
+        "ghl-super-hub:ghl-memberships",
+        "ghl-super-hub:ghl-courses"
+      ],
+      "routines": [
+        "routines/funding-launch-check.prompt",
+        "routines/ghl-health-check.prompt"
+      ]
+    },
+    {
+      "name": "CRM Coach",
+      "charter": "agents/90-reserved-crm-coach.md",
+      "account": "business",
+      "milestone": 3,
+      "reserved": true,
+      "skills": [
+        "vault-notes"
+      ],
+      "routines": []
+    },
+    {
+      "name": "Reactivation Desk",
+      "charter": "agents/91-reserved-reactivation-desk.md",
+      "account": "business",
+      "milestone": "later",
+      "reserved": true,
+      "skills": [],
+      "routines": []
+    },
+    {
+      "name": "Personal Assistant",
+      "charter": "agents/06-personal-assistant.md",
+      "account": "personal",
+      "pinned": true,
+      "skills": [
+        "getting-started",
+        "personal-scheduling",
+        "vault-notes"
+      ],
+      "routines": [
+        "routines/morning-agenda.prompt",
+        "routines/tomorrow-prep.prompt"
+      ]
+    },
+    {
+      "name": "Money Manager",
+      "charter": "agents/07-money-manager.md",
+      "account": "personal",
+      "skills": [
+        "money-check",
+        "vault-notes"
+      ],
+      "routines": [
+        "routines/monthly-money-review.prompt"
+      ]
+    }
+  ],
+  "standing_approvals": "policies/APPROVALS.md#standing-approvals",
+  "ask_first_rules_location": "Settings → General → Auto-review (Dan adds these)",
+  "external_skills": [
+    {
+      "repo": "https://github.com/jbellsolutions/ghl-super-hub",
+      "path": "skills/",
+      "install": "bash install.sh"
+    }
+  ],
+  "projects": [
+    "projects/income-hub/SPEC.md",
+    "projects/eod-tracker/SPEC.md",
+    "projects/call-hub/SPEC.md",
+    "projects/slack-priority-scan/SPEC.md",
+    "projects/funding-launch/SPEC.md",
+    "projects/payment-check/SPEC.md",
+    "projects/jarvis/SPEC.md",
+    "projects/financial-os/SPEC.md"
+  ],
+  "claude_code_setup": "claude-code/SETUP.md",
+  "permanently_denied_actions": [
+    "move money, pay anyone, or change billing, payroll, bank, phone-number or A2P settings",
+    "ask for or store Social Security numbers, bank details, credit reports, passwords or ID numbers",
+    "promise funding amounts, approval odds, credit-score changes, income or results",
+    "delete anything in GoHighLevel, HubSpot, Drive or Slack",
+    "edit or delete someone else's Slack message",
+    "judge or discipline a rep in a channel",
+    "use Dan's own logins, pull session cookies or get around a permission",
+    "claim to be a person when asked",
+    "change its own permissions or these rules"
+  ]
+}

@@ -1,0 +1,13 @@
+NAME: EOD reminder 1
+OWNER: Sales Manager
+ACCOUNT: business
+WHEN: Every day at 8:30 AM
+MILESTONE: 2
+STATUS: Created paused. Turned on only after Dan says yes.
+---
+Switch check: read /workspace/spike-team/context/routines-on.md. If "EOD reminder 1" isn't listed there as "on" or "test", write "EOD reminder 1: not switched on" to this month's file in /workspace/spike-team/log/ and stop.
+Test mode: if it's listed as "test", send every message to Dan only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/spike-team/ and this account's connected apps. If /workspace/spike-team/context/owner.md is missing, write NO_CLIENT_SOURCE to the log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, write "no change" and stop.
+
+Use the eod-parsing skill. Re-read yesterday's EOD window and compare it with /workspace/spike-team/context/eod-roster.md (skip anyone marked off that day). If nobody is missing, write "none missing" and stop. If /workspace/spike-team/context/eod-mode.md says "live", tag each missing rep in their EOD channel with standing approval 2's exact text, using the slack-api skill. If it says "preview", send nothing to the team; write "would have tagged: <names>" to /workspace/spike-team/daily/<today>/sales.md.

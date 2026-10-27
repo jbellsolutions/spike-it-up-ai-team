@@ -1,0 +1,13 @@
+NAME: Monthly money review
+OWNER: Money Manager
+ACCOUNT: personal
+WHEN: The 4th of every month at 9:00 AM
+MILESTONE: -
+STATUS: Created paused. Turned on only after Dan says yes.
+---
+Switch check: read /workspace/dan-personal/context/routines-on.md. If "Monthly money review" isn't listed there as "on" or "test", write "Monthly money review: not switched on" to this month's file in /workspace/dan-personal/log/ and stop.
+Test mode: if it's listed as "test", send every message to Dan only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/dan-personal/ and this account's connected apps. If /workspace/dan-personal/context/owner.md is missing, write NO_CLIENT_SOURCE to the log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, write "no change" and stop.
+
+Use the money-check skill, section "Monthly review". From the latest Monarch export, last month's journal notes and the documents in the Drive folder Financial OS/: net worth vs last month and why, the biggest spending themes, anything out of pattern, progress on Dan's stated goals, and one paragraph he can act on. Send it to Dan and save it to /workspace/dan-personal/vault/Money/Reviews/<YYYY-MM>.md. If there's no export newer than 10 days, ask Dan to export from Monarch first and stop.

@@ -1,0 +1,13 @@
+NAME: EOD reminder 2
+OWNER: Sales Manager
+ACCOUNT: business
+WHEN: Every day at 10:30 AM
+MILESTONE: 2
+STATUS: Created paused. Turned on only after Dan says yes.
+---
+Switch check: read /workspace/spike-team/context/routines-on.md. If "EOD reminder 2" isn't listed there as "on" or "test", write "EOD reminder 2: not switched on" to this month's file in /workspace/spike-team/log/ and stop.
+Test mode: if it's listed as "test", send every message to Dan only, never to a channel or anyone else, and start each message with "TEST".
+Isolation guard: work only in /workspace/spike-team/ and this account's connected apps. If /workspace/spike-team/context/owner.md is missing, write NO_CLIENT_SOURCE to the log and stop. Never use another bot's files, logins or memory.
+Lean run: read only what this job needs. If nothing changed, write "no change" and stop.
+
+Same as EOD reminder 1, with standing approval 3's exact text ("second reminder"). Tag only reps still missing now. In preview, write "would have tagged: <names>" to today's sales.md instead.
