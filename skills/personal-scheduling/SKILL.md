@@ -33,4 +33,9 @@ Flag an email as "needs Dan" if it asks him a direct question, needs a decision 
 
 ## Reminders
 
-"Remind me Friday at 3 to…": save it to `context/reminders.md` with the time. Create a one-time routine that sends Dan only that reminder at that time, Eastern unless he says otherwise. Include it in that morning's agenda or brief too. A recurring reminder is a routine, so it needs Dan's yes like any other.
+"Remind me Friday at 3 to…": save it to `context/reminders.md` with the time. Create a one-time routine that sends Dan only that reminder at that time, Eastern unless he says otherwise. Name it `Reminder: <short text>`.
+- **Create it switched on.** Write `Reminder: <short text>: on` to `context/routines-on.md` yourself. Dan asking for the reminder is the yes, so don't ask again.
+- Its instruction is one line: "Send Dan: <reminder text>. Then remove this routine's line from context/routines-on.md."
+- If GrokBot still asks Dan to approve it, say once: "That's the reminder you asked for." He approves; you don't get around it.
+
+Include the reminder in that morning's agenda or brief too. A **recurring** reminder ("every Monday…") is a standing routine. It's created paused and needs Dan's yes like any other.

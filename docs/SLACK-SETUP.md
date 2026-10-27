@@ -16,7 +16,7 @@ Dan works in two workspaces:
 | Workspace | What's there | Connector (reading as Dan) | Spike Ops (posting) |
 |---|---|---|---|
 | **Dan's own** | His DMs; where he wants his assistant to live | Yes, from milestone 1 | No |
-| **The partner program's** | EOD, setter and leaderboard channels; the VA's posts; the partner, who needs fast replies | Yes, from milestone 1 if the connector can hold both | Yes, from milestone 2. The partner's admin approves the install |
+| **The partner program's** | EOD, setter and leaderboard channels; the VA's posts; the partner, who needs fast replies | Yes, from milestone 1 if the connector can hold both | Read only in milestone 1 if the connector can't hold both (for the VA digest); posting from milestone 2. The partner's admin approves the install |
 
 Ask the partner's admin before installing. A pending install is the most common reason the bot "can't see" a channel.
 

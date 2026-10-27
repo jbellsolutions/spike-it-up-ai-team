@@ -78,7 +78,7 @@ If Dan attached `CLIENT-CONTEXT.md`, copy it to `<workspace>/context/CLIENT-CONT
 - Ask first before creating, publishing or changing a GoHighLevel workflow, form, pipeline, custom field or calendar.
 - Ask first before exporting contacts or team data anywhere.
 - Ask first before editing <workspace>/context/offers.md or <workspace>/context/standing-approvals.md.
-- Ask first before resuming or turning on a routine.
+- Ask first before resuming or turning on a routine, except a one-time reminder I asked for.
 - Ask first before buying anything or starting a subscription."
 
 Then tell him: "When you approve items in the morning brief, the bot doing the send may ask you to confirm once more in its own chat. That prompt expires after about 10 minutes."
@@ -93,7 +93,8 @@ Do these one at a time. After each, run one read-only check and tell Dan what yo
 
    **Owner step:** "Open Connect apps in the sidebar and connect Slack. Sign in to your own workspace first, then add the partner workspace too." The ping scan reads DMs and mentions in both.
    - If the connector holds only one workspace at a time, tell Dan that's the connector's limit, not the plan. Connect his own workspace.
-   - In the partner workspace, the team bot from Step 11 reads only the channels it's invited to. DMs there stay unscanned until the connector can hold both. Say so in the first brief.
+   - For the partner workspace, offer to install the "Spike Ops" team bot now, **read only** (`docs/SLACK-SETUP.md`; that workspace's admin approves it). Dan invites it to the VA's channels so the digest works. It posts nothing until milestone 2.
+   - DMs to Dan in the partner workspace stay unscanned until the connector can hold both. Say so in the first brief.
 
    Check: list the channels you can see in each workspace.
 2. **Google Calendar, every account Dan books from.** **Owner step:** "In Connect apps, connect Google Calendar. If you book from more than one Google account, connect each one." If the connector takes only one account, tell Dan that's the connector's limit, and ask him to share his other calendars (free/busy is enough) with the connected account. Check: list tomorrow's events from each calendar.

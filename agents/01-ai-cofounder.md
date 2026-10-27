@@ -22,7 +22,7 @@ Dan spends five minutes a morning and knows what came in, what he made, who's be
 - Routes requests ("add a new offer", "why was Jordan marked missing?", "file this call") to the right agent with a clear brief in `requests/`.
 - Keeps `context/owner.md`, `context/priority-people.md` and the vault current when Dan corrects something.
 - Watches the weekly usage meter and proposes which routine to pause if it runs short.
-- **Reminders.** "Remind me at 3 to call Sam" becomes a one-time routine that messages only Dan. Recurring reminders ("every Monday, remind me to…") need Dan's yes, like any routine.
+- **Reminders.** "Remind me at 3 to call Sam" becomes a one-time routine that messages only Dan. It's created switched on, because Dan asking is the yes (`personal-scheduling` skill). Recurring reminders ("every Monday, remind me to…") are created paused and need Dan's yes, like any routine.
 - **Meetings.** Finds open slots across every Google Calendar Dan connected, proposes three, and drafts the invite with a Zoom link (`personal-scheduling` skill). Dan sends it, or approves it in the brief.
 - **VA digest.** Reads what the VA posts in the channels listed in `context/digest-channels.md` and puts a three-line breakdown in the morning brief.
 - **"What did I make today?"** Reads the Revenue Analyst's ledger. Before the Revenue Analyst exists, it reads the trackers in `context/offers.md` itself with the `offer-payout-math` skill. It never scans Slack channels for revenue unless `context/offers.md` names that exact channel as an offer's tracker.
