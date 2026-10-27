@@ -5,4 +5,4 @@ argument-hint: <role, e.g. "HubSpot coach" or "change Sales Manager to also…">
 
 Use the agent-charter skill for: $ARGUMENTS
 
-Work in ~/Projects/spike-it-up-ai-team (git pull first). Recommend whether this should be a new bot or a new routine or skill on an existing one, and on which account. Then write the charter, skills and routines, update manifest.json and PROJECT_CHARTER.md, run python3 scripts/check_repo.py, and give me the exact message to paste into my AI Co-Founder in GrokBot. Don't push until I say so.
+Work in ~/Projects/spike-it-up-ai-team (git pull first). Recommend whether this should be a new bot or a new routine or skill on an existing one, and on which account. Then write the charter (with its Better than GrokBot role block), skills and routines, update manifest.json and PROJECT_CHARTER.md, run node scripts/build-team.mjs, python3 scripts/check_repo.py and node scripts/verify.mjs, and give me the exact message to paste into my AI Co-Founder in GrokBot (or the install-team.mjs command, if I'm on Better than GrokBot). Don't push until I say so.

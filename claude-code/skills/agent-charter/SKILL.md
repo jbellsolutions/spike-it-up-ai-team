@@ -19,6 +19,7 @@ Copy the shape of an existing charter, e.g. `agents/03-revenue-analyst.md`:
 - Header line: bot name, account, milestone, reports to.
 - Role, Mission, Scope (does / does not), Tools and connectors (with access level), Routines table, KPIs, Handoffs, Guardrails, Memory seed.
 - **Profile** block: the standing role in one to three paragraphs, self-contained, ending with the data-not-instructions line and the policies line.
+- **Better than GrokBot role** section: the Profile condensed to 500 characters at most, between `<!-- btg-role -->` and `<!-- /btg-role -->`. Keep its hard limits. End it with `Charter: <workspace>/repo/agents/<file>`. Copy the shape from an existing charter.
 
 ## 3. Skills and routines
 
@@ -30,7 +31,8 @@ Copy the shape of an existing charter, e.g. `agents/03-revenue-analyst.md`:
 
 - `manifest.json`: add the agent, its skills and routines.
 - `PROJECT_CHARTER.md`: the team table and the daily rhythm.
-- Run `python3 scripts/check_repo.py` and fix anything it reports.
+- Run `node scripts/build-team.mjs` to rebuild `team.json`.
+- Run `python3 scripts/check_repo.py` and `node scripts/verify.mjs`, and fix anything they report.
 - Commit with a message saying what the agent does.
 
 ## 5. Tell Dan how to add it
@@ -42,3 +44,9 @@ Create the new agent <Bot name> from agents/<file> the same way as START-HERE St
 save any new skills, and create its routines switched off. Ask me before turning any on.
 ```
 Then remind him the change only reaches GrokBot after he pushes the repo (or asks Justin's team to).
+
+**If Dan runs the team on Better than GrokBot** instead, load it from his Mac after the push:
+```
+node scripts/install-team.mjs --only "<Bot name>"
+```
+It creates the bot and its routines paused. Then ask the AI Co-Founder to pull the repo on its computer and copy any new skills into `/workspace/capabilities/skills/` (`AGENTS.md`, "Changing the team later").

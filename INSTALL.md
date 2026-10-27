@@ -105,6 +105,8 @@ cp .env.example .env.local && chmod 600 .env.local      # only if .env.local doe
 | `HONCHO_API_KEY` | Long-term memory | Recommended |
 | `AGENTMAIL_API_KEY`, `AGENTPHONE_API_KEY` | Bot email, texts and calls | Optional, later |
 
+Leave `BOPS_ORGO_COMPUTER_ID` in `.env.local` empty. When it's set, every lead borrows that one computer, so Personal would share it with Spike Team. Never set it to the Hermes computer.
+
 Set the models as the app's `INSTALL.md` says (for example `z-ai/glm-5.3-flash` for `BOPS_CHAT_MODEL`, `BOPS_SESSION_MODEL` and `BOPS_HARD_MODEL`). Dan can change them in **Settings → Models**. Tell him each provider bills separately.
 
 ```bash
@@ -161,20 +163,21 @@ Send Dan one short message:
 The installer can't reach the bot's computer, so the lead does this part itself. Ask Dan's OK first: it uses his model credit and starts the AI Co-Founder's Orgo computer. Then send the AI Co-Founder this message in the app:
 
 ```
-Set up your cloud computer for my business team from https://github.com/jbellsolutions/spike-it-up-ai-team.
-Better than GrokBot already made you and Funding Launch, set your roles and created your routines paused.
-1. Do START-HERE.md Step 1 for the business workspace, /workspace/spike-team/.
-2. Copy every folder in /workspace/spike-team/repo/skills/ into /workspace/capabilities/skills/.
-3. Read your charter, /workspace/spike-team/repo/agents/01-ai-cofounder.md, and remember its Memory seed.
-4. If /workspace/spike-team/context/CLIENT-CONTEXT.md exists, read it first. Then do START-HERE Step 3 with me, one question at a time.
+Set up your cloud computer for my business team. Better than GrokBot already made you and Funding Launch, set your roles and created your routines paused.
+1. Clone the repo: git clone https://github.com/jbellsolutions/spike-it-up-ai-team /workspace/spike-team/repo
+   If it asks for a login, stop and tell me. Don't try another way in.
+2. Read START-HERE.md Step 1 in that clone, and do the rest of it for the business workspace, /workspace/spike-team/.
+3. Copy every folder in /workspace/spike-team/repo/skills/ into /workspace/capabilities/skills/.
+4. Read your charter, /workspace/spike-team/repo/agents/01-ai-cofounder.md, and remember its Memory seed.
+5. If /workspace/spike-team/context/CLIENT-CONTEXT.md exists, read it first. Then do START-HERE Step 3 with me, one question at a time.
 Skip START-HERE Steps 2, 4, 5, 6 and 9: the installer and the app cover them. Send nothing to anyone but me. Log each step to /workspace/spike-team/log/setup.md.
 ```
 
-- **If Justin gave Dan a `CLIENT-CONTEXT.md`:** after item 1, **Owner step:** Dan opens the bot's computer with **Watch → Take control**, runs `cat > /workspace/spike-team/context/CLIENT-CONTEXT.md` in its terminal, pastes the file, presses Ctrl-D and hands the screen back. The file goes onto the computer, never into a chat.
 - **If the clone asks for a login,** the repo is still private to the bot's computer. Use a read-only deploy key, so no secret passes through a chat:
-  1. The bot runs `ssh-keygen -t ed25519 -N '' -f ~/.ssh/spike_team_repo -C spike-team-bot` and shows Dan the **public** key (`~/.ssh/spike_team_repo.pub`; safe to share).
+  1. Ask the bot to run `ssh-keygen -t ed25519 -N '' -f ~/.ssh/spike_team_repo -C spike-team-bot` and show Dan the **public** key (`~/.ssh/spike_team_repo.pub`; safe to share).
   2. **Owner step (Justin, who owns the repo):** add it under the repo's **Settings → Deploy keys**, read only.
-  3. The bot clones with `GIT_SSH_COMMAND='ssh -i ~/.ssh/spike_team_repo -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new' git clone git@github.com:jbellsolutions/spike-it-up-ai-team.git /workspace/spike-team/repo`.
+  3. Ask the bot to clone with `GIT_SSH_COMMAND='ssh -i ~/.ssh/spike_team_repo -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new' git clone git@github.com:jbellsolutions/spike-it-up-ai-team.git /workspace/spike-team/repo`, then carry on from item 2.
+- **If Justin gave Dan a `CLIENT-CONTEXT.md`:** after item 2, **Owner step:** Dan opens the bot's computer with **Watch → Take control**, runs `cat > /workspace/spike-team/context/CLIENT-CONTEXT.md` in its terminal, pastes the file, presses Ctrl-D and hands the screen back. The file goes onto the computer, never into a chat.
 
 Then send **Funding Launch** this message:
 
@@ -268,13 +271,17 @@ Two things the app can't do, and what this repo does instead:
 node scripts/install-team.mjs --personal
 ```
 
-This creates the **Personal** workspace with the **Personal Assistant** as its lead and its 2 routines, paused. The Personal Assistant gets its own computer.
+This creates the **Personal** workspace with the **Personal Assistant** as its lead and its 2 routines, paused.
+
+The Personal Assistant gets its own computer on its first task, **if Dan's Orgo plan has room for one**. If it hasn't, the app puts it on the Spike Team computer and says so in its chat. Then stop and tell Dan: his personal notes would sit next to the business files. He can make room on his Orgo plan himself, or leave Personal for later.
 
 Then send the Personal Assistant the step 5 message with these changes:
-- the workspace is `/workspace/dan-personal/`;
-- item 2 copies only the skills marked `personal` in `manifest.json`;
+- the workspace is `/workspace/dan-personal/`, and item 1 clones into `/workspace/dan-personal/repo` (the deploy-key fallback works the same way);
+- item 3 copies only the skills marked `personal` in `manifest.json`;
 - its charter is `agents/06-personal-assistant.md`;
-- item 4 runs `getting-started` in personal mode.
+- item 5 runs `getting-started` in personal mode.
+
+**Check:** `curl -s "http://127.0.0.1:3210/api/computer?bot=<id>"` gives a different computer for the Personal Assistant than for the AI Co-Founder.
 
 Connect only Dan's personal Google account, and give it only to the Personal bots.
 
